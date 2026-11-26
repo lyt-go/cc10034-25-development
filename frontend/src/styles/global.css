@@ -70,3 +70,26 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .analysis-chart { display: flex; align-items: flex-end; gap: 8px; height: 160px; padding: 12px 0; }
 .analysis-bar { flex: 1; border-radius: 4px 4px 0 0; background: var(--brand); min-width: 24px; position: relative; transition: height 0.4s; }
 .analysis-bar span { position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 10px; color: var(--muted); white-space: nowrap; }
+
+/* 联邦训练中断恢复面板 */
+.recovery-panel { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-top: 20px; }
+.recovery-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.recovery-head h3 { margin: 0 0 4px; font-size: 16px; }
+.recovery-scope { display: flex; gap: 12px; align-items: flex-end; margin: 12px 0; padding: 12px; background: #f8fafc; border-radius: 8px; }
+.recovery-scope .create-field { margin-bottom: 0; min-width: 180px; }
+.recovery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0; }
+.recovery-form { border: 1px solid var(--border); border-radius: 8px; padding: 14px; background: #fcfdff; }
+.recovery-form h4 { margin: 0 0 10px; font-size: 14px; }
+.agg-intake { margin: 12px 0; }
+.form-hint { font-size: 12px; color: var(--muted); margin: 8px 0 0; }
+.recovery-notice { border-radius: 6px; padding: 8px 12px; font-size: 13px; }
+.recovery-notice.ok { background: #ecfdf3; color: #027a48; border: 1px solid #abefc6; }
+.recovery-notice.err { background: #fef3f2; color: #b42318; border: 1px solid #fda29b; }
+.recovery-panel h4 { font-size: 14px; margin: 16px 0 8px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; white-space: nowrap; }
+.badge-ok { background: #ecfdf3; color: #027a48; }
+.badge-missing { background: #fffaeb; color: #b54708; }
+.badge-closed { background: #f2f4f7; color: #475467; }
+.badge-retry { background: #eff8ff; color: #175cd3; }
+.agg-result { font-size: 14px; }
+@media (max-width: 900px) { .recovery-grid { grid-template-columns: 1fr; } }

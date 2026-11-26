@@ -90,6 +90,9 @@
       <span>共 {{ total }} 条{{ meta.name }}记录</span>
       <span v-if="errorMessage" class="error-text">{{ errorMessage }}</span>
     </footer>
+
+    <RecoveryPanel v-if="moduleKey === 'federated_train'" mode="train" />
+    <RecoveryPanel v-else-if="moduleKey === 'secure_agg'" mode="agg" />
   </section>
 </template>
 
@@ -104,9 +107,11 @@ import {
   runAction as applyAction,
 } from '@/api/backend-service'
 import type { EntryRow } from '@/data/types'
+import RecoveryPanel from '@/views/RecoveryPanel.vue'
 
 const props = defineProps<{ moduleKey: string }>()
-const meta = moduleMeta(props.moduleKey)
+const moduleKey = props.moduleKey
+const meta = moduleMeta(moduleKey)
 const rows = ref<EntryRow[]>([])
 const total = ref(0)
 const errorMessage = ref('')
